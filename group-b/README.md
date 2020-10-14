@@ -7,6 +7,7 @@
 **31494, 45362, 45434, 45520, 45530, 45531
 61816, 62169, 62258, 62308**
 
+
 ## Структура
 
 [Class](./class) е (грубо, понякога невярно, оптимистично) обобщение на това, което сме свършили в час. Може да го използвате като отправна точка за решаване на задачки за съответната седмица.
@@ -19,3 +20,18 @@ batebobo#5691 в [Discord](https://discord.com/channels/624136666197655555/76089
 
 bvushkov@gmail.com, като е хубаво да се представите.
 
+
+## Седмица 1 - Въведение
+* [Запис](https://drive.google.com/file/d/17ck7WplcWucz9-ymB_Z71JO1LHQSAWuJ/view?usp=sharing)
+* [Записки](./class/01.introduction.md)
+* [Задачки](./exercises/01.introduction)
+
+## Седмица 2 - Видове рекурсия
+* [Запис](https://drive.google.com/file/d/11cxYr1WUxoLe2e_jsC7mN0d0AjfCnYEs/view?usp=sharing)
+* [Записки](./class/02.recursive-and-iterative-processes.md)
+* [Задачки](./exercises/02.recursive-iterative-processes)
+
+## Седмица 3 - Функции от по-висок ред
+* Запис
+* [Записки](./class/03.higher-order-functions.md)
+* [Задачки](./exercises/03.higher-order-functions)
