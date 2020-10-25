@@ -104,8 +104,7 @@
     (if (> i end)
         result
         (loop (next i)
-              (operation result
-                         (transform i))))
+              (operation result (transform i))))
     )
 
   (loop start initial)
