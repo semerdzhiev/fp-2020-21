@@ -32,6 +32,6 @@ bvushkov@gmail.com, като е хубаво да се представите.
 * [Задачки](./exercises/02.recursive-iterative-processes)
 
 ## Седмица 3 - Функции от по-висок ред
-* Запис
+* [Запис](https://drive.google.com/file/d/1mmk2qRVnGdulMf9s3Zeig_BjRWNslzJg/view?usp=sharing)
 * [Записки](./class/03.higher-order-functions.md)
 * [Задачки](./exercises/03.higher-order-functions)
