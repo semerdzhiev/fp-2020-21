@@ -37,6 +37,6 @@ bvushkov@gmail.com, като е хубаво да се представите.
 * [Задачки](./exercises/03.higher-order-functions)
 
 ## Седмица 4 - Списъци
-* Запис
+* [Запис](https://drive.google.com/file/d/1af5EdnTFKu5bqnvtuRI9kVkzZaF4X6Wu/view?usp=sharing)
 * [Записки](./class/04.lists.md)
 * [Задачки](./exercises/04.lists)
