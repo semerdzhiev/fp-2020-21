@@ -20,14 +20,14 @@
 ; но натрупва резултата с произволна бинарна операция.
 ; Реализирайте я чрез итеративен процес.
 ; Пример: сума, произведение, дизюнкция и т.н.
-(define (accumulate from to step term acc)
+(define (accumulate from to op term acc)
   (if (> from to)
     acc
     (accumulate (+ from 1)
                  to
-                 step
+                 op
                  term
-                 (step acc (term from)))))
+                 (op acc (term from)))))
 
 ; 3. Реализирайте факториел чрез accumulate.
 (define (fact n)

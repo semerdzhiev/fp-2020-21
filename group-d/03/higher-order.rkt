@@ -69,10 +69,10 @@
 (define (sum-term from to term acc) void)
 
 ; 2. Напишете функция като горната,
-; но натрупва резултата с произволна бинарна операция.
+; но натрупва резултата с произволна бинарна операция op.
 ; Реализирайте я чрез итеративен процес.
 ; Пример: сума, произведение, дизюнкция и т.н.
-(define (accumulate from to step term acc) void)
+(define (accumulate from to op term acc) void)
 
 ; 3. Реализирайте факториел чрез accumulate.
 (define (fact n) void)
