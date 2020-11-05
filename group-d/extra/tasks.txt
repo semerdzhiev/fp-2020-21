@@ -10,6 +10,7 @@
 
 3. Да се напише функция (meetTwice? f g a b), която проверява дали в
 целочисления интервал [a; b] съществуват две различни цели числа x и y такива,
-че f(x) = g(x) и f(y) = g(y).
+че f(x) = g(x) и f(y) = g(y). Ползвайте accumulate.
   Пример:(meetTwice? (lambda(x)x) (lambda(x) (- x)) -3 1) → #f
-  Пример:(meetTwice? (lambda(x)x) sqrt 0 5) → #t
+  Пример:(meetTwice? (lambda(x)x) sqrt 0 5) → #t // 0 и 1
+
