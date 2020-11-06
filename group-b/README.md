@@ -43,5 +43,5 @@ bvushkov@gmail.com, като е хубаво да се представите.
 
 ## Седмица 5 - Още списъци
 * [Запис](https://drive.google.com/file/d/1yU5LHzbCIXXVG8SGSD3jLocceVAmNRZ8/view?usp=sharing)
-* Записки
-* Задачки
+* [Записки](./class/05.more-lists.md)
+* [Задачки](./exercises/05.more-lists.md)
