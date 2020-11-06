@@ -40,3 +40,8 @@ bvushkov@gmail.com, като е хубаво да се представите.
 * [Запис](https://drive.google.com/file/d/1af5EdnTFKu5bqnvtuRI9kVkzZaF4X6Wu/view?usp=sharing)
 * [Записки](./class/04.lists.md)
 * [Задачки](./exercises/04.lists)
+
+## Седмица 5 - Още списъци
+* [Запис](https://drive.google.com/file/d/1yU5LHzbCIXXVG8SGSD3jLocceVAmNRZ8/view?usp=sharing)
+* Записки
+* Задачки
