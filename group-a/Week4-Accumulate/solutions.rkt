@@ -12,6 +12,9 @@
 (define (++ n)
   (+ n 1))
 
+(define (-- n)
+  (- n 1))
+
 (define (filter-iaccumulate should-process?
                             operation
                             transform
@@ -131,55 +134,7 @@
                       b)
   )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+;; Задача 6
 (define [all? p? a b]
   (iaccumulate (lambda (x y) (and x y))
                p?
@@ -197,4 +152,15 @@
                a
                ++
                b)
+  )
+
+;; Задача 7
+(define [prime? n]
+  (define [divides? a b]
+    (= (% b a) 0)
+    )
+
+  (all? (lambda [i] (not (divides? i n)))
+        2
+        (-- n))
   )
