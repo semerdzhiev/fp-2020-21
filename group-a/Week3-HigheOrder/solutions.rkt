@@ -63,6 +63,5 @@
     )
 
   (lambda [x]
-    (/ ((loop 1 f) x)
-       1.0))
-  )
+    ((loop 1 f) x)
+    ))
