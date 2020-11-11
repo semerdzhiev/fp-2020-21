@@ -45,3 +45,8 @@ bvushkov@gmail.com, като е хубаво да се представите.
 * [Запис](https://drive.google.com/file/d/1yU5LHzbCIXXVG8SGSD3jLocceVAmNRZ8/view?usp=sharing)
 * [Записки](./class/05.more-lists.md)
 * [Задачки](./exercises/05.more-lists)
+
+## Седмица 6 -  map/filter/fold
+* [Запис](https://drive.google.com/file/d/1Ppw6ZVWjRbLev4_UdZcVLAmOBaTWlH-5/view?usp=sharing)
+* Записки
+* [Задачки](./exercises/06.map-filter-fold)
