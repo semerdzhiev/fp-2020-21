@@ -1,0 +1,3 @@
+# Racket-specific files and directories
+*.bak
+compiled/
