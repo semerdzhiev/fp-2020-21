@@ -1,0 +1,25 @@
+; Прост пример, който показва как да изведем квадрат
+; Тази функция не е част от решението.
+; Нейната цел е да демонстрира как да извеждаме символите.
+(define (example)
+  (display #\┌)
+  (display #\─)
+  (display #\─)
+  (display #\─)  
+  (display #\┐)
+  (display #\newline)
+  (display #\│)
+  (display #\space)
+  (display #\space)
+  (display #\space)
+  (display #\│)
+  (display #\newline)
+  (display #\└)
+  (display #\─)
+  (display #\─)
+  (display #\─)  
+  (display #\┘)
+  (display #\newline)
+)
+
+(example)
