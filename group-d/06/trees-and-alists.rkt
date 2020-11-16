@@ -1,7 +1,5 @@
 #lang racket
 
-; TODO let, let*, letrec
-
 ; Двоично дърво ще представяме по следния начин:
 ; 1) '() е двоично дърво.
 ; 2) (root left right) е двоично дърво, точно когато
@@ -69,6 +67,10 @@
 
 ; ляво-дясно-корен
 (define (post-order t) void)
+
+; Обръща 2ката от наследници на всеки връх.
+; (root left right) -> (root right left)
+(define (flip-tree t) void)
 
 
 ; Асоциативен списък ще наричаме списък от двойки от вида (key . value)
