@@ -48,5 +48,5 @@ bvushkov@gmail.com, като е хубаво да се представите.
 
 ## Седмица 6 -  map/filter/fold
 * [Запис](https://drive.google.com/file/d/1Ppw6ZVWjRbLev4_UdZcVLAmOBaTWlH-5/view?usp=sharing)
-* Записки
+* [Записки](./class/06.map-filter-fold.md)
 * [Задачки](./exercises/06.map-filter-fold)
