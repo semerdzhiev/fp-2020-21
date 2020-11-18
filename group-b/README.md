@@ -50,3 +50,8 @@ bvushkov@gmail.com, като е хубаво да се представите.
 * [Запис](https://drive.google.com/file/d/1Ppw6ZVWjRbLev4_UdZcVLAmOBaTWlH-5/view?usp=sharing)
 * [Записки](./class/06.map-filter-fold.md)
 * [Задачки](./exercises/06.map-filter-fold)
+
+## Седмица 7 - Дървета
+* Запис
+* Записки
+* [Задачки](./class/07.trees.rkt)
