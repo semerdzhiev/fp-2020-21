@@ -1,5 +1,7 @@
 #lang racket
 
+; TODO let, let*, letrec
+
 ; Отложени операции
 
 ; delay от даден израз прави отложена операция
