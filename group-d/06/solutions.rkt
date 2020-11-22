@@ -114,19 +114,18 @@
 (define (in-order tree)
   (if (empty? tree)
     '()
-    (append (pre-order (left tree))
+    (append (in-order (left tree))
             (list (root tree))
-            (pre-order (right tree)))))
+            (in-order (right tree)))))
 
 ; ляво-дясно-корен
 ; (post-order t) -> (2 4 3 1)
 (define (post-order tree)
   (if (empty? tree)
     '()
-    (append (pre-order (left tree))
-            (pre-order (right tree))
+    (append (post-order (left tree))
+            (post-order (right tree))
             (list (root tree)))))
-
 
 ; Обръща 2ката от наследници на всеки връх.
 ; (root left right) -> (root right left)
