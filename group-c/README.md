@@ -2,7 +2,7 @@
 
 Асистент: Александър Шумаков (a.shumakov97@g.fmi.uni-sofia.bg) 
 
-Упражнения: вторник, 12:15-13:45 https://meet.google.com/cfx-abnh-sje
+Упражнения: вторник, 12:15-13:45 https://meet.google.com/jmr-qfwx-khc
 
 Записи[*](#бележки): https://drive.google.com/drive/folders/1TFE3GOFun61As2-VRS5gury-r5Gk8-6n
 
