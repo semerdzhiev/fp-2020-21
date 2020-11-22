@@ -53,5 +53,5 @@ bvushkov@gmail.com, като е хубаво да се представите.
 
 ## Седмица 7 - Дървета
 * [Запис](https://drive.google.com/file/d/1g6ks7YprIN5NKHJS1HMy5U4TxNUKn4zw/view?usp=sharing)
-* Записки
+* [Записки](./class/07.trees.rkt)
 * [Задачки](./class/07.trees.rkt)
