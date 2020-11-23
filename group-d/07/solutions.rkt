@@ -105,7 +105,8 @@
 ; Имплементирайте следните функции за работа с графи
 ; Може да ползвате горните функции за асоциативни списъци
 
-; връща списък от всички ребра на графа g.
+; Връща списък от всички ребра* на графа g.
+; * т.е. двойки върхове (x . y), такива че има ребро от x към y
 (define (children-edges vs)
   (map (lambda (v) (cons (car vs) v))
        (cdr vs)))
@@ -113,19 +114,19 @@
 (define (edges g)
   (apply append (map children-edges g)))
 
-; връща списък от децата на върха v в g.
+; Връща списък от децата на върха v в g.
 (define (children v g)
   (alist-assoc v g))
 
-; проверява дали има ребро от върха u до върха v в g.
+; Проверява дали има ребро от върха u до върха v в g.
 (define (edge? u v g)
   (not (null? (member v (children u g)))))
 
-; връща списък от прилаганията на функцията f върху децата на v в g.
+; Връща списък от прилаганията на функцията f върху децата на v в g.
 (define (map-children v f g)
   (map f (children v g)))
 
-; връща първото дете на v в g, което е вярно за предиката p.
+; Връща първото дете на v в g, което е вярно за предиката p.
 (define (search-child v p g)
   (define (help-search vs)
     (cond [(null? vs) '()]
@@ -133,13 +134,13 @@
           [else (help-search (cdr vs))]))
   (help-search (children v g)))
 
-; премахване на върха v от графа g заедно с ребрата до него.
+; Премахване на върха v от графа g заедно с ребрата до него.
 (define (remove-vertex v g)
   (map (lambda (xs)
          (filter (lambda (x) (not (equal? x v))) xs))
        (del-assoc v g)))
 
-; добавяне на ребро от u до v в g.
+; Добавяне на ребро от u до v в g.
 (define (add-if-missing x l)
   (if (member x l)
       l
@@ -160,11 +161,11 @@
 
 ; Имплементирайте следните функции за графи.
 
-; връща степента на върха v в графа g.
+; Връща степента на върха v в графа g.
 (define (degree v g)
   (length (alist-assoc v g)))
 
-; проверява дали графа g е симетричен.
+; Проверява дали графа g е симетричен.
 (define (every? p l)
   (or (null? l)
       (and (p (car l))
@@ -175,14 +176,14 @@
             (edge? (cadr edge) (car edge) g))
           (edges g)))
 
-; инвертира графа g. Тоест за всяко ребро (u,v) в g новият граф ще има реброто (v,u).
+; Инвертира графа g. Тоест за всяко ребро (u,v) в g новият граф ще има реброто (v,u).
 (define (invert g)
   (foldl (lambda (edge g-inverted)
            (add-edge (cadr edge) (car edge) g-inverted))
          (make-graph (vertices g))
          (edges g)))
 
-; проверява дали има път между върховете u и v в графа g.
+; Проверява дали има път между върховете u и v в графа g.
 (define (search p l)
   (and (not (null? l))
        (or (p (car l))
@@ -201,7 +202,7 @@
                  (dfs (list vertex)))
                (vertices g))))
 
-; проверява дали графа g е ацикличен.
+; Проверява дали графа g е ацикличен.
 (define (acyclic? g)
   (define (dfs path)
     (let ((current (car path)))
