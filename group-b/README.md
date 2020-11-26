@@ -55,3 +55,8 @@ bvushkov@gmail.com, като е хубаво да се представите.
 * [Запис](https://drive.google.com/file/d/1g6ks7YprIN5NKHJS1HMy5U4TxNUKn4zw/view?usp=sharing)
 * [Записки](./class/07.trees.rkt)
 * [Задачки](./class/07.trees.rkt)
+
+## Седмица 8 - Потоци
+* Запис
+* [Записки](./class/08.streams.rkt)
+* [Задачки](./class/08.streams.rkt)
