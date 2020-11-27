@@ -1,19 +1,5 @@
 #lang racket
-
-(define (default) #t)
-(define (% x y)
-  (modulo x y))
-
-(define (// x y)
-  (quotient x y))
-
-(define (id n) n)
-
-(define (++ n)
-  (+ n 1))
-
-(define (-- n)
-  (- n 1))
+(#%require "../common.scm")
 
 (define (filter-iaccumulate should-process?
                             operation

@@ -1,7 +1,5 @@
 #lang racket
-
-(define (++ n)
-  (+ n 1))
+(#%require "../common.scm")
 
 ;;Задача 1
 (define [constantly c]
