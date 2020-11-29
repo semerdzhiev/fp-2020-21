@@ -112,3 +112,74 @@
                 (insert val (tail lst))))
     )
   )
+
+;; Задача 8
+
+;; (define (insertion-sort lst)
+;;   (define (loop left sorted)
+;;     sorted
+;;    )
+;;   lst
+;;   )
+
+
+;; Задача 10
+
+(define (compose . fns)
+  (define (id x) x)
+  (define (single-compose f1 f2)
+    (lambda (x)
+      (f1 (f2 x))
+      )
+    )
+
+  (foldr single-compose
+         id
+         fns)
+  )
+
+
+;; Задача 11
+
+(define (group-by f lst)
+  (define (add-to-group item groups)
+    (cond
+      ((null? groups) (list (cons (car item)
+                                  (list (cdr item)))))
+      ((equal? (car item)
+               (caar groups)) (cons (cons (car item)
+                                          (cons (tail item)
+                                                  (tail (head groups))))
+                                    (tail groups)))
+
+      (else (cons (head groups)
+                  (add-to-group item (tail groups))))
+      )
+    )
+
+  (define (collect indexed)
+    (foldr add-to-group '() indexed))
+
+  (let*
+      ((indexed (zipWith cons
+                         (map f lst)
+                         lst))
+       (grouped (collect indexed))
+       )
+    indexed
+    )
+  )
+
+
+;; Задача 12
+(define (zipWith* f . lsts)
+  (let*
+      ((combined (foldr (lambda (l1 l2) (zipWith cons l1 l2))
+                        (map (lambda (x) '()) (car lsts))
+                        lsts))
+       (ziped (map (lambda (lst) (apply f lst))
+                   combined))
+       )
+    ziped
+    )
+  )
