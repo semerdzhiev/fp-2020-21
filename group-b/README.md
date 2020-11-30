@@ -59,4 +59,4 @@ bvushkov@gmail.com, като е хубаво да се представите.
 ## Седмица 8 - Потоци
 * Запис
 * [Записки](./class/08.streams.rkt)
-* [Задачки](./class/08.streams.rkt)
+* [Задачки](./exercises/08.generic-exercises)
