@@ -1,8 +1,6 @@
 #lang r5rs
-
-;; Функция която виръща константно истина.
-;; Използвана при `cond` за прегледност
-(define (otherwise) #t)
+(#%require "common.scm")
+(#%provide (all-defined))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Реурсивни имплементации на `accumulate`. ;;
@@ -42,7 +40,7 @@
       ((> i end) initial)
       ((should-process? i) (operation (transform i)
                                       (helper (next i))))
-      ((otherwise) (helper (next i))))
+      ((default) (helper (next i))))
     )
 
   (helper start)
@@ -80,7 +78,7 @@
       ((should-stop? i) initial)
       ((should-process? i) (operation (transform i)
                                       (helper (next i))))
-      ((otherwise) (helper (next i))))
+      ((default) (helper (next i))))
     )
 
   (helper start)
@@ -123,7 +121,7 @@
       ((> i end) result)
       ((should-process? i) (loop (next i)
                                  (operation result (transform i))))
-      ((otherwise) (loop (next i) result)))
+      ((default) (loop (next i) result)))
     )
 
   (loop start initial)
@@ -160,7 +158,7 @@
       ((should-stop? i) result)
       ((should-process? i) (loop (next i)
                                  (operation result (transform i))))
-      ((otherwise) (loop (next i) result)))
+      ((default) (loop (next i) result)))
     )
 
   (loop start initial)

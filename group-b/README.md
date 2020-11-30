@@ -57,6 +57,6 @@ bvushkov@gmail.com, като е хубаво да се представите.
 * [Задачки](./class/07.trees.rkt)
 
 ## Седмица 8 - Потоци
-* Запис
+* [Запис](https://drive.google.com/file/d/1Il3T5Vz4086-eCuTN_unKFVUUnvz7ZkQ/view?usp=sharing)
 * [Записки](./class/08.streams.rkt)
 * [Задачки](./exercises/08.generic-exercises)

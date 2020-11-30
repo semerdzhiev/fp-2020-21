@@ -1,11 +1,5 @@
 #lang racket
-
-(define [++ n]
-  (+ n 1))
-
-(define [id n] n)
-
-(define [otherwise] #t)
+(#%require "../common.scm")
 
 ;; Реурсивна дясно асоциативна имплементация на `accumulate`.
 (define [accumulate operation

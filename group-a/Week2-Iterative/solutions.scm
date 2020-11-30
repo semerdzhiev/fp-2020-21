@@ -1,16 +1,5 @@
-#lang r5rs
-
-(define (++ n)
-  (+ n 1))
-
-(define (% x y)
-  (modulo x y))
-
-(define (// x y)
-  (quotient x y))
-
-(define (divides? a b)
-  (= 0 (modulo b a)))
+#lang racket
+(#%require "../common.scm")
 
 (define (get-last-digit n)
   (% n 10)
