@@ -11,9 +11,9 @@
 (define (tree? t)
   (or (null? t)
       (and (list? t)
-           (= (length t) 3))
+           (= (length t) 3)
            (tree? (cadr t))
-           (tree? (caddr t))))
+           (tree? (caddr t)))))
 (define empty-tree? null?)
 
 
