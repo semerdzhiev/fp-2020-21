@@ -170,7 +170,7 @@ map = undefined
 reverse :: [a] -> [a]
 reverse = undefined
 
-filter :: [a] -> (a -> Bool) -> [a]
+filter :: (a -> Bool) -> [a] -> [a]
 filter = undefined
 
 -- типовете на елементите на списъка и акумулатора са различни
