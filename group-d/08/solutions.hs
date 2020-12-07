@@ -33,7 +33,7 @@ prefix :: [Int] -> [Int] -> Bool
 prefix xs ys = take (length xs) ys == xs
 
 suffix :: [Int] -> [Int] -> Bool
-suffix xs ys = drop (length xs) ys == xs
+suffix xs ys = drop (length ys - length xs) ys == xs
 
 weakListComprehension :: [a] -> (a -> Bool) -> (a -> b) -> [b]
 weakListComprehension xs p f = map f (filter p xs)
