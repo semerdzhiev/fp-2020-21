@@ -1,8 +1,13 @@
-{-# OPTIONS_GHC -fwarn-incomplete-patterns #-}      -- cover all cases!
-{-# OPTIONS_GHC -fwarn-unused-matches #-}           -- use all your pattern matches!
-{-# OPTIONS_GHC -fwarn-missing-signatures #-}       -- write all your toplevel signatures!
-{-# OPTIONS_GHC -fwarn-name-shadowing #-}           -- use different names!
-{-# OPTIONS_GHC -fwarn-incomplete-uni-patterns #-}  -- no incomplete patterns in lambdas!
+{-# OPTIONS_GHC -fwarn-incomplete-patterns #-}
+-- cover all cases!
+{-# OPTIONS_GHC -fwarn-unused-matches #-}
+-- use all your pattern matches!
+{-# OPTIONS_GHC -fwarn-missing-signatures #-}
+-- write all your toplevel signatures!
+{-# OPTIONS_GHC -fwarn-name-shadowing #-}
+-- use different names!
+{-# OPTIONS_GHC -fwarn-incomplete-uni-patterns #-}
+-- no incomplete patterns in lambdas!
 
 import Prelude hiding (map, reverse, filter, foldl, zip)
 
@@ -12,7 +17,6 @@ import Prelude hiding (map, reverse, filter, foldl, zip)
 -- - частично прилагане на функции и currying
 -- - if <cond> then <expr> else <expr>
 -- - (\x y -> 2 * x + y)
--- - guards
 -- - ghci commands:
 --    - :l(oad)
 --    - :r(eload)
@@ -21,7 +25,27 @@ import Prelude hiding (map, reverse, filter, foldl, zip)
 --    - :i(info)
 
 
--- TODO: types and ADTs
+-- разглеждане на случаи - guards
+-- мислете си за cond от scheme
+fib :: Int -> Int
+fib n
+  | n == 0 = 0
+  | n == 1 = 1
+  | otherwise = fib (n - 1) + fib (n - 2)
+
+
+-- Типовете които може мда дефинираме с ключовата дума type
+-- не са много интересни
+type Vector3 = (Int, Int, Int)
+
+-- Всъщност това ни служи когато искаме да дадем
+-- нещо като всевдоним на някой тип.
+-- Когато пуснем програмата тези имена изчезват и програмата ни
+-- вместо Vector3 ще вижда просто (Int, Int, Int)
+sumV3 :: Vector3 -> Vector3 -> Vector3
+sumV3 (x1,y1,z1) (x2,y2,z2) = (x1+x2,y1+y2,z1+z2)
+
+
 
 -- Дефинираме алгебричен тип данни по следния начин:
 -- Пример за нещо което бихме постигнали с "enum" в други езици
@@ -60,8 +84,8 @@ data List a
 
 -- Можем да дефинираме функции като поредица от равенства.
 -- Все едно дефинираме функцията по различен начин за различните входни данни.
--- А вида на входните данни подбираме чрез prattern matching.
--- Важно е да покрием всички случаи.
+-- А вида на входните данни подбираме чрез образци.
+-- Важно е да покрием всички случаи!
 
 -- Примери:
 fact :: Int -> Int
@@ -69,16 +93,21 @@ fact 0 = 1  -- получили сме 0 и директно връщаме 1
 fact n = n * fact (n - 1)
 -- получили сме някакво число и му даваме името "n".
 -- със сигурност не е 0, защото проверката на дефинициите се случва отгоре надолу.
+-- Тук ако подадем отрицателно число ще зациклим,
+-- но целта ни е функцията да е дефинирана над естествени числа.
 
 listLength :: List a -> Int
 listLength Nil = 0  -- съпоставяме [] (конкретна стойност)
 listLength (Cons _ t) = 1 + listLength t
 -- Тук се вижда че можем да използваме конструкторите на алгебричен тип
--- и да ги съпоставяме както бихме правили с литерали (все пак те са просто низове)
--- Тоест получили сме списък от вида (Cons h t), където "h" е главата а "t" опашката
+-- и да ги съпоставяме както бихме правили с литерали
+-- (все пак те са просто низове)
+-- Тоест получили сме списък от вида (Cons h t),
+-- където "h" е главата а "t" опашката
 -- Дали сме име на опашката и можем да използваме променливата отдясно на равното.
 -- Обаче главата не ни трябва да я свързваме с име затова вместо "h" пишем "_"
--- Така казваме че има някакъв елемент на това място но не ни трябва да знаем какъв е.
+-- Така казваме че има някакъв елемент на това място,
+-- но не ни трябва да знаем какъв е.
 
 -- * няма унификация на имената на променливите (трябва да са различни)
 
@@ -90,9 +119,9 @@ headPlusLen [] = 0
 headPlusLen (x:xs) = x + length (x:xs)
 
 -- в случея не е много но не можем ли да си спестим "x:xs" частта
-headPlusLen :: [Int] -> Int
-headPlusLen [] = 0
-headPlusLen r@(x:_) = x + length r
+headPlusLen' :: [Int] -> Int
+headPlusLen' [] = 0
+headPlusLen' r@(x:_) = x + length r
 -- Тук опашката на списъка не ни трябва
 
 -- * Ползвайте guard-ове само когато наистина ви се налага
@@ -106,7 +135,7 @@ data Nat -- от Natural number (естествено число)
 
 -- ЗАДАЧИ
 
--- За дадено n връща n - 1
+-- За дадено n връща (n - 1)
 -- predNat от 0 е 0
 predNat :: Nat -> Nat
 predNat = undefined
@@ -127,7 +156,8 @@ plus = undefined
 mult :: Nat -> Nat -> Nat
 mult = undefined
 
--- Имплементирайте някой познати функции за списъци (стандартните списъци в Prelude)
+-- Имплементирайте някой познати функции за списъци
+-- (стандартните списъци в Prelude)
 
 map :: (a -> b) -> [a] -> [b]
 map = undefined
