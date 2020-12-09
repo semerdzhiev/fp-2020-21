@@ -60,3 +60,7 @@ bvushkov@gmail.com, като е хубаво да се представите.
 * [Запис](https://drive.google.com/file/d/1Il3T5Vz4086-eCuTN_unKFVUUnvz7ZkQ/view?usp=sharing)
 * [Записки](./class/08.streams.rkt)
 * [Задачки](./exercises/08.generic-exercises)
+
+## Седмица 9 - Графи
+* [Запис](https://drive.google.com/file/d/1l-g6QXJlP2ZidwmnPzF0rS3P0RLT8pra/view?usp=sharing)
+* [Задачки](./class/09.graphs.rkt)
