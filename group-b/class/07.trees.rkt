@@ -96,8 +96,8 @@
 ; искаме да вкараме елемент в двоично наредено дърво (binary search tree - BST)
 (define (bst-insert x tree)
   (cond ((empty-tree? tree) (make-leaf x))
-	((> x (root-tree tree)) (bst-insert x (right-tree tree)))
-	(else (bst-insert x (left-tree tree))))
+	((> x (root-tree tree)) (make-tree (root-tree tree) (left-tree tree) (bst-insert x (right-tree tree))))
+	(else (make-tree (root-tree tree) (bst-insert x (left-tree tree)) (right-tree tree))))
 )
 
 (define example-list '(1 5 4 6 2 8 7))
