@@ -42,8 +42,8 @@ type Vector2 = (Int, Int)
 -- нещо като всевдоним на някой тип.
 -- Когато пуснем програмата тези имена изчезват и програмата ни
 -- вместо Vector3 ще вижда просто (Int, Int, Int)
-sumV3 :: Vector2 -> Vector2 -> Vector2
-sumV3 v1 v2 = (fst v1 + fst v2, snd v1 + snd v2)
+sumV2 :: Vector2 -> Vector2 -> Vector2
+sumV2 v1 v2 = (fst v1 + fst v2, snd v1 + snd v2)
 
 
 -- Дефинираме алгебричен тип данни по следния начин:
