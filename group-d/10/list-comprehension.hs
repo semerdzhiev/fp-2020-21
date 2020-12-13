@@ -60,7 +60,6 @@ circlePerimeter :: Float -> Float
 circlePerimeter r = let pi = 3.14
                     in 2 * pi * r
 
-
 -- Друга конструкция е where
 
 -- <function-definition>
@@ -82,27 +81,23 @@ circleArea r = pi * r * r
 -- ЗАДАЧИ
 -- няколко за загрявка
 
---nub
--- за списък от числа, премахва дубликатите
-nub :: (Eq a) => [a] -> [a]
+-- за списък от цели числа, премахва дубликатите
+nub :: [Int] -> [Int]
 nub = undefined
 
--- quicksort
-quicksort :: (Ord a) => [a] -> [a]
+-- quicksort за цели числа
+quicksort :: [Int] -> [Int]
 quicksort = undefined
 
 -- Проверява дали число е просто
 prime :: Int -> Bool
 prime = undefined
 
--- primes
 -- За дадено число n връща списък от първите n прости числа
 primes :: Int -> [Int]
 primes = undefined
 
--- Може да решавате задачите за подготовка за контролната
--- В папката в github на Информатика 2 има качени
--- Тези които се предполага че ще можете да решите само на Scheme са
--- тези за структури от данни (дървета, графи)
--- Опитайте се да решите останалите на Haskell (за потоци вие си решавате)
-
+-- За дадено естествено число, връща списък от простите му делители
+-- factorize 60 = [2, 2, 3, 5]
+factorize :: Int -> [Int]
+factorize = undefined
