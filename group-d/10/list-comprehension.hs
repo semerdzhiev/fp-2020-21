@@ -131,19 +131,16 @@ circleArea r = pi * r * r
 -- ЗАДАЧИ
 -- няколко за загрявка
 
--- за списък от цели числа, премахва дубликатите
+-- за списък от цели числа, премахва дубликатите,
+-- т.е. запазва само първите срещания на даден елемент
 nub :: [Int] -> [Int]
 nub = undefined
-
--- quicksort за цели числа
-quicksort :: [Int] -> [Int]
-quicksort = undefined
 
 -- Проверява дали число е просто
 prime :: Int -> Bool
 prime = undefined
 
--- За дадено число n връща списък от първите n прости числа
+-- За дадено число n връща списък от първите n прости (положителни) числа
 primes :: Int -> [Int]
 primes = undefined
 
@@ -151,3 +148,7 @@ primes = undefined
 -- factorize 60 = [2, 2, 3, 5]
 factorize :: Int -> [Int]
 factorize = undefined
+
+-- quicksort за цели числа
+quicksort :: [Int] -> [Int]
+quicksort = undefined
