@@ -9,7 +9,7 @@
 {-# OPTIONS_GHC -fwarn-incomplete-uni-patterns #-}
 -- no incomplete patterns in lambdas!
 
-import Prelude hiding (map, reverse, filter, foldl, zip)
+import Prelude hiding (map, reverse, filter, foldl, zip, zipWith, takeWhile)
 
 -- THROWBACK
 -- - декларации/дефиниции на функции
