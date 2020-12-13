@@ -16,4 +16,4 @@
 9. [Алгебрични типове и съпоставяне на образци](./09)([запис](https://drive.google.com/file/d/1HmOyvZS5e5kgYQ3z6d4SPiy0tJEUOqUt/view?usp=sharing))
 10. [Въведение в Haskell](./10)([запис](soonTM))
 
-* [Допълнително упражнение преди К1](./pre-exam) ([запис](https://drive.google.com/file/d/1sTs9qjBXREwAGBfAmULi9EEDAo1K60J-/view?usp=sharing))
+* [Допълнително упражнение преди К1](./pre-exam-1) ([запис](https://drive.google.com/file/d/1sTs9qjBXREwAGBfAmULi9EEDAo1K60J-/view?usp=sharing))
