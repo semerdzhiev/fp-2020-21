@@ -193,7 +193,3 @@ weakListComprehension = undefined
 -- по даден списък xs и функция f
 -- връща списък от тези елементи x на xs, за които f(x) е от xs
 closed = undefined
-
--- По даден списък от двойки (интервали) (a,b), връща списък
--- от всички подинтервали на най-дългият интервал
-longestIntervalSubset = undefined

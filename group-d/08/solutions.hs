@@ -1,9 +1,13 @@
-
-{-# OPTIONS_GHC -fwarn-incomplete-patterns #-}      -- cover all cases!
-{-# OPTIONS_GHC -fwarn-unused-matches #-}           -- use all your pattern matches!
-{-# OPTIONS_GHC -fwarn-missing-signatures #-}       -- write all your toplevel signatures!
-{-# OPTIONS_GHC -fwarn-name-shadowing #-}           -- use different names!
-{-# OPTIONS_GHC -fwarn-incomplete-uni-patterns #-}  -- no incomplete patterns in lambdas!
+{-# OPTIONS_GHC -fwarn-incomplete-patterns #-}
+-- cover all cases!
+{-# OPTIONS_GHC -fwarn-unused-matches #-}
+-- use all your pattern matches!
+{-# OPTIONS_GHC -fwarn-missing-signatures #-}
+-- write all your toplevel signatures!
+{-# OPTIONS_GHC -fwarn-name-shadowing #-}
+-- use different names!
+{-# OPTIONS_GHC -fwarn-incomplete-uni-patterns #-}
+-- no incomplete patterns in lambdas!
 
 import Prelude hiding (abs)
 
@@ -40,18 +44,3 @@ weakListComprehension xs p f = map f (filter p xs)
 
 closed :: [Int] -> (Int -> Int) -> [Int]
 closed xs f = filter (\x -> f x `elem` xs) xs
-
-longestIntervalSubset :: [(Float,Float)] -> [(Float,Float)]
-longestIntervalSubset xs = filter
-                           (< (foldl
-                              (\acc x -> if x > acc then x else acc)
-                              (0,0)
-                              xs))
-                           xs
-
--- Това решение се базира на това че сравнението в Haskell е дефинирано върху
--- наредени n-торки.
--- В частност maximum която намира най-големия елемент в списък също.
--- Все пак ползва същото това сравнение.
-longestIntervalSubset' :: [(Float,Float)] -> [(Float,Float)]
-longestIntervalSubset' xs = filter (< (maximum xs)) xs
