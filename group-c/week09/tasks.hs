@@ -1,6 +1,10 @@
 {-
 Welcome to Haskell!
 
+инструменти за работа:
+    - GHC за Windows: https://www.haskell.org/downloads/
+    - Visual Studio Code
+
 основни операции с числа:
     +, -, *, /
     ^, **
