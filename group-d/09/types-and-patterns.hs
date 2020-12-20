@@ -9,7 +9,7 @@
 {-# OPTIONS_GHC -fwarn-incomplete-uni-patterns #-}
 -- no incomplete patterns in lambdas!
 
-import Prelude hiding (map, reverse, filter, foldl, zip)
+import Prelude hiding (map, reverse, filter, foldl, zip, zipWith, takeWhile)
 
 -- THROWBACK
 -- - декларации/дефиниции на функции
@@ -34,16 +34,29 @@ fib n
   | otherwise = fib (n - 1) + fib (n - 2)
 
 
+-- Кортежи (Tuples)
+-- До колкото помним наредена n-торка има следния вид в Haskell
+-- (e1, .., en)
+-- Като елементите могат да са от произволен тип за разлика от списъците
+-- всеки кортеж си има конструктор
+-- (,) :: a -> b -> (a, b)
+-- (,,) :: a -> b -> c -> (a, b, c) и т.н.
+-- Няма кортеж от 1 елемент
+-- но има празен кортеж - ()
+
+-- С функциите fst и snd можем да вземем съответно първия или втория елемент
+-- от наредена двойка (само за двойки)
 -- Типовете които може мда дефинираме с ключовата дума type
 -- не са много интересни
+
 type Vector2 = (Int, Int)
 
 -- Всъщност това ни служи когато искаме да дадем
 -- нещо като всевдоним на някой тип.
 -- Когато пуснем програмата тези имена изчезват и програмата ни
 -- вместо Vector3 ще вижда просто (Int, Int, Int)
-sumV3 :: Vector2 -> Vector2 -> Vector2
-sumV3 v1 v2 = (fst v1 + fst v2, snd v1 + snd v2)
+sumV2 :: Vector2 -> Vector2 -> Vector2
+sumV2 v1 v2 = (fst v1 + fst v2, snd v1 + snd v2)
 
 
 -- Дефинираме алгебричен тип данни по следния начин:
@@ -130,6 +143,18 @@ headPlusLen' r@(x:_) = x + length r
 
 -- * Ползвайте guard-ове само когато наистина ви се налага
 -- * Тоест дефинирайте си функциите с pattern matching когато можете
+
+-- Още примери
+
+-- Ако искаме да си дефинираме функции (като fst и snd) за наредени 3-ки:
+first :: (a, b, c) -> a
+first (x, _, _) = x
+
+second :: (a, b, c) -> b
+second (_, y, _) = y
+
+third :: (a, b, c) -> c
+third (_, _, z) = z
 
 
 data Nat -- от Natural number (естествено число)
