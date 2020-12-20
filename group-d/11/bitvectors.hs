@@ -158,3 +158,25 @@ bitVectorToInteger = undefined
 -- -> End :. One :. One :. Zero
 addBitVector :: BitVector -> BitVector -> BitVector
 addBitVector = undefined
+
+
+---------------------
+-- SOME MORE LISTS --
+---------------------
+
+-- Checks if a list of lists is a square
+isSquareMatrix :: [[a]] -> Bool
+isSquareMatrix = undefined
+
+-- Get the main diagonal of a matrix
+mainDiag :: [[a]] -> [a]
+mainDiag = undefined
+
+-- Get the secondary diagonal of a matrix
+secondaryDiag :: [[a]] -> [a]
+secondaryDiag = undefined
+
+-- (a,b,c) is a pythgorean triplet when a^2 + b^2 = c^2
+-- Find the first n such
+pythagoreanTriples :: Int -> [(Int, Int, Int)]
+pythagoreanTriples = undefined
