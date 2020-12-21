@@ -1,3 +1,4 @@
 # Racket-specific files and directories
 *.bak
 compiled/
+**/.vscode
