@@ -137,10 +137,10 @@ integerToBitVector = undefined
 
 -- Convert a BitVector to a number
 -- EXAMPLES:
--- integerToBitVector 0 -- End
--- integerToBitVector 69
--- -> End :. One :. Zero :. Zero :. Zero :. One :. Zero :. One
--- integerToBitVector 16 -- End :. One :. Zero :. Zero :. Zero :. Zero
+-- bitVectorToInteger  0 -- End
+-- bitVectorToInteger End :. One :. Zero :. Zero :. Zero :. One :. Zero :. One
+--                    -> 16
+-- bitVectorToInteger End :. One :. Zero :. Zero :. Zero :. Zero -- 16
 bitVectorToInteger :: BitVector -> Integer
 bitVectorToInteger = undefined
 -- HINT: It would be easier to first canonicalise the bitvector
