@@ -21,7 +21,7 @@ data Bit = Zero | One
 
 -- | Before (with Nat) we had "unary" natural numbers,
 -- they were encoded in a 1-ary counting system.
--- We can also represent natural numbers in a more familiar to you way - binary.
+-- We can also represent natural numbers in another familiar to you way - binary.
 
 -- A binary number is a list of bits.
 -- We will call this a BitVector.
