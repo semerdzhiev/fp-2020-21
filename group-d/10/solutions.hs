@@ -44,7 +44,7 @@ factorize n = concatMap (listDivisors n) ps
 -- quicksort за цели числа
 -- Няма нужда да взимаме случаен елемент
 -- просто можем да вземем първия
-quicksort :: (Ord a) => [a] -> [a]
+quicksort :: [Int] -> [Int]
 quicksort [] = []
 quicksort (x:xs) =  lower ++ [x] ++ higher
   where lower = quicksort [y | y<-xs, y <= x]
