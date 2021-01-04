@@ -174,6 +174,33 @@ instance Ord Nat where
   (<=) :: Nat -> Nat -> Bool
   (<=) = undefined
 
+-- Имолементирайте нужните функции за да бъде
+-- BitVector инстанция на класовете Eq и Ord
+-- Може да ползвате функции за BitVector-и от миналия път наготово
+data Bit = Zero | One
+  deriving Show
+
+data BitVector
+  = End
+  | BitVector :. Bit
+  deriving Show
+
+-- Изберете един да реализирате.
+-- Другият имплементирайте чрез избрания.
+instance Eq BitVector where
+  (==) :: BitVector -> BitVector -> Bool
+  (==) = undefined
+  (/=) :: BitVector -> BitVector -> Bool
+  (/=) = undefined
+
+-- Изберете един да реализирате.
+-- Другият имплементирайте чрез избрания.
+instance Ord BitVector where
+  compare :: BitVector -> BitVector -> Ordering
+  compare = undefined
+  (<=) :: BitVector -> BitVector -> Bool
+  (<=) = undefined
+
 -- Имплементирайте mergeSort
 mergeSort :: Ord a => [a] -> [a]
 mergeSort = undefined
