@@ -141,7 +141,7 @@ instance Ord Parity where
 ------------
 
 data Nat
-  = Zero
+  = NatZero
   | Succ Nat
   deriving Show
 
@@ -174,6 +174,7 @@ instance Ord Nat where
   (<=) :: Nat -> Nat -> Bool
   (<=) = undefined
 
+
 -- Имолементирайте нужните функции за да бъде
 -- BitVector инстанция на класовете Eq и Ord
 -- Може да ползвате функции за BitVector-и от миналия път наготово
@@ -184,6 +185,22 @@ data BitVector
   = End
   | BitVector :. Bit
   deriving Show
+
+infixl 6 :.
+
+instance Num BitVector where
+  fromInteger :: Integer -> BitVector
+  fromInteger 0 = End
+  fromInteger n
+    | n `rem` 2 == 0 = rec Zero
+    | otherwise = rec One
+    where rec bit = fromInteger (n `div` 2) :. bit
+-- Няма нужда да имплементирате долните
+  (+) = undefined
+  (*) = undefined
+  abs = undefined
+  signum = undefined
+  negate = undefined
 
 -- Изберете един да реализирате.
 -- Другият имплементирайте чрез избрания.
