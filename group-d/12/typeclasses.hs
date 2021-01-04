@@ -188,6 +188,8 @@ data BitVector
 
 infixl 6 :.
 
+-- Тъй като това е правено на предно упражнение,
+-- може да го ползвате за удобство
 instance Num BitVector where
   fromInteger :: Integer -> BitVector
   fromInteger 0 = End
