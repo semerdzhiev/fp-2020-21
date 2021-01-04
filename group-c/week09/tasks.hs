@@ -53,8 +53,7 @@ clamp x y z
 -- fact n = n * fact (n - 1)
 factorial :: Int -> Int
 factorial 0 = 1
-factorial 1 = 2
-factorial 2 = 5
+factorial 1 = 1
 factorial n = n * factorial (n - 1)
 
 -- Задача 1: Да се реализира функцията max x y z, която връща най-голямото от 3 числа
