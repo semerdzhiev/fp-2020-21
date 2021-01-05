@@ -75,4 +75,4 @@ myMergeSort xs = merge mergedFirstHalf mergedSecondHalf
         mergedSecondHalf = myMergeSort secondHalf
         firstHalf = take half xs
         secondHalf = drop half xs
-        half = (length xs) `div` 2
+        half = length xs `div` 2
