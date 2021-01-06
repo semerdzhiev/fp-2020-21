@@ -20,8 +20,8 @@ application & composition:
 
 -- Задача 1: Напишете функция countMinimum, която връща броя
 -- срещания на минималния елемент от списък в списъка
-countMinimum :: (Ord a) -> [a] -> Int 
-countMinimum xs = undefined 
+countMinimum :: (Ord a) => [a] -> Int 
+countMinimum xs = undefined
 
 -- Задача 2: Напишете функция isPrime, която по подадено число
 -- връща дали числото е просто
