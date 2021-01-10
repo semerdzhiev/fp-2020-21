@@ -72,3 +72,7 @@ bvushkov@gmail.com, като е хубаво да се представите.
 
 ## Седмица 11 - Въведение в Haskell
 * [Запис](https://drive.google.com/file/d/1yeCtBPBk2_L4htsFNsztGjU_730hrzEw/view?usp=sharing)
+
+## Седмица 12 - Типове в Haskell
+* [Запис](https://drive.google.com/file/d/1crLIdWe6BG4wA7Cxwt6TDENqMDOL2S2L/view?usp=sharing)
+* [Код от часа](./class/12.types.hs)
