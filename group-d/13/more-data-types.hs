@@ -1,10 +1,15 @@
-{-# OPTIONS_GHC -fwarn-incomplete-patterns #-}     -- cover all cases
-{-# OPTIONS_GHC -fwarn-unused-matches #-}          -- use all your pattern matches
-{-# OPTIONS_GHC -fwarn-missing-signatures #-}      -- write all toplevel signatures
-{-# OPTIONS_GHC -fwarn-name-shadowing #-}          -- use different names
-{-# OPTIONS_GHC -fwarn-incomplete-uni-patterns #-} -- no incomplete patterns in lambdas
+{-# OPTIONS_GHC -fwarn-incomplete-patterns #-}
+-- cover all cases
+{-# OPTIONS_GHC -fwarn-unused-matches #-}
+-- use all your pattern matches
+{-# OPTIONS_GHC -fwarn-missing-signatures #-}
+-- write all toplevel signatures
+{-# OPTIONS_GHC -fwarn-name-shadowing #-}
+-- use different names
+{-# OPTIONS_GHC -fwarn-incomplete-uni-patterns #-}
+-- no incomplete patterns in lambdas
 
-import Prelude hiding (lookup)
+import Prelude hiding (Maybe(..), maybe, Either(..), either, lookup)
 
 -- Друго нещо което показах беше type,
 -- за да правите псевдоними на типове (type synonyms).
@@ -30,31 +35,37 @@ data Student'
 -- 0) Генерира функции с имената на полетата,
 --  с които можем да взимаме съответните полета
 -- 1) Наследения клас Show принтира Student' по различен начин
--- TODO: Примери
+-- TODO пример
 
-
--- Ние вече използвахме няколко рекурсивно дефинирани типа.
--- Nat, List и сега дървета...
-data BTree a
-  = Empty
-  | Node a (BTree a) (BTree a)
+-- Ето един тип, който може да е доста полезен,
+-- Maybe, със следната дефиниция:
+data Maybe a
+  = Nothing
+  | Just a
   deriving Show
+-- Maybe е малко като конструктивно доказателство
+-- т.е. ако Bool твърди дали нещо съществува или не,
+-- то Maybe връща нещото ако то съществува
 
--- Ето още един смислен тип - Maybe, със следната дефиниция:
--- data Maybe a = Nothing | Just a
--- идеята на Maybe е да може се използва за операции,
+-- основно приложение на Maybe е да се използва за операции,
 -- които могат да за провалят (а ние не харесваме exception-и)
 -- Пример:
 -- head []  -- Грешка
+-- safeHead []  -- Nothing
 safeHead :: [a] -> Maybe a
 safeHead [] = Nothing
 safeHead (x:_) = Just x
--- safeHead []  -- Nothing
 
 
 ------------
 -- ЗАДАЧИ --
 ------------
+
+-- Двоично дърво с елементи от тип a
+data BTree a
+  = Empty
+  | Node a (BTree a) (BTree a)
+  deriving Show
 
 -- При делене на 0 операцията е неуспешна.
 -- В противен случай искаме да върнем двойка от коефицент и остатък
@@ -69,11 +80,6 @@ safeDiv = undefined
 lookup :: Eq k => k -> [(k, v)] -> Maybe v
 lookup = undefined
 
--- Да се получи списък от обхождането на двоично дърво.
--- Нека обхождането да е ляво-корен-дясно
-treeToList :: BTree a -> [a]
-treeToList = undefined
-
 -- Да се вмъкне елемент в дърво, спрямо наредбата на елементите му.
 -- Примери:
 -- insertOrdered 5 Empty == Node 5 Empty Empty
@@ -82,7 +88,7 @@ treeToList = undefined
 insertOrdered :: Ord a => a -> BTree a -> BTree a
 insertOrdered = undefined
 
--- Да се построи binary search tree от списък (използвайте insertOrdered)
+-- Да се построи binary search tree от списък (използвайте insertOrdered) с елементи от тип a
 -- Примери:
 -- listToTree [1..10] == Node 10 (Node 9 (Node 8 (Node 7 (Node 6 (Node 5 (Node 4 (Node 3 (Node 2 (Node 1 Empty Empty) Empty) Empty) Empty) Empty) Empty) Empty) Empty) Empty) Empty
 -- listToTree [1,10,2,9,3,8] == Node 8 (Node 3 (Node 2 (Node 1 Empty Empty) Empty) Empty) (Node 9 Empty (Node 10 Empty Empty))
@@ -93,14 +99,15 @@ listToTree = undefined
 sumTree :: Num a => BTree a -> a
 sumTree = undefined
 
--- Функцията map за двоично дърво
-mapTree :: (a -> b) -> BTree a -> BTree b
-mapTree = undefined
-
 -- Дали за всеки елемент в дърво е изпълнен даден предикат.
 --(Node 5 (Node 2 Empty Empty) (Node 7 Empty Empty))
 allTree :: (a -> Bool) -> BTree a -> Bool
 allTree = undefined
+
+-- Да се получи списък от обхождането на двоично дърво.
+-- Нека обхождането да е ляво-корен-дясно
+treeToList :: BTree a -> [a]
+treeToList = undefined
 
 -- Проверка дали елемент участва в дадено дърво.
 -- elemTree 5 (listToTree [1..10]) == True
@@ -109,8 +116,8 @@ elemTree :: Eq a => a -> BTree a -> Bool
 elemTree = undefined
 
 -- Проверка за съществуване на елемент, изпълняващ даден предикат.
--- elemTree even (listToTree [1..10]) -- Just 2
--- elemTree (>20) (listToTree [1..10]) -- Nothing
+-- findPred even (listToTree [1..10]) -- Just 2
+-- findPred (>20) (listToTree [1..10]) -- Nothing
 findPred :: (a -> Bool) -> BTree a -> Maybe a
 findPred = undefined
 
@@ -144,7 +151,7 @@ bt = Node 0 (Node 1 (Node 3 (Node 7 Empty Empty)
 -- нужни за да се принтират елементите от по-високите нива на дървото
 
 -- може да използвате следното:
--- mapM_ putStrLn bt
+-- mapM_ putStrLn $ printBT bt
 -- за да си принтирате елементите на нови редове
 printBT :: (Show a) => BTree a -> [String]
 printBT = undefined
