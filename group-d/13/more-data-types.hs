@@ -24,12 +24,12 @@ getName (x,_,_) = x
 -- А типа може да има и 15 полета ...
 
 -- В този случай можем да си улесним живота
--- като дефинираме свой тип с data и използваме record syntax
-
+-- като дефинираме алгебричен тип, използвайки record syntax:
 data Student'
-  = Student { name :: String
-            , course :: String
-            , facultyNumber :: Int }
+  = Student
+    { name :: String
+    , course :: String
+    , facultyNumber :: Int }
   deriving Show
 -- Това направи няколко неща които не промениха как се държи програмата ни
 -- 0) Генерира функции с имената на полетата,
