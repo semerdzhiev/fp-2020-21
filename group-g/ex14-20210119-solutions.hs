@@ -17,6 +17,7 @@ instance Show BitVector where
 instance Num BitVector where
   fromInteger :: Integer -> BitVector
   fromInteger = undefined
+  -- Всичко останало може да се направи с toInteger и fromInteger, но е по-интересно без тях :)
   (+) = undefined
   (*) = undefined
   abs = undefined
