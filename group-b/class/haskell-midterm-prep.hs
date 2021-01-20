@@ -51,3 +51,18 @@ subsequences' xs = nub $ helper xs (length xs)
 sumOfCubes = [x^3 + y^3 | x <- [1..], y <- [1..]]
 
 -- Път от корен до възел в двоично дърво кодираме с поредица от цифри 0 и 1, която започва с цифрата 1, а за всяка следваща цифра 0 означава завиване по левия клон, а 1 — по десния. Да се реализира функция sameAsCode, която в двоично дърво от числа връща такова число x, което съвпада по стойност с двоичното число, кодиращо пътя от корена до x, или 0, ако такова число няма. Представянето на дървото е по ваш избор.
+
+sameAsCode :: Tree Int -> [Int]
+sameAsCode Empty = []
+sameAsCode t = map fst $ filter (\(v, xs) -> v == toDecimal xs) $ collectValues $ transform t [1]
+  where collectValues Empty = []
+        collectValues (Tree root left right) = root : (collectValues left ++ collectValues right) 
+        transform Empty _ = Empty
+        transform (Tree root left right) path = Tree (root, path) (transform left (path ++ [0])) (transform right (path ++ [1]))
+        toDecimal [] = 0
+        toDecimal [x] = x
+        toDecimal (x:xs) = x * 2^(length xs) + toDecimal xs
+
+-- '(1 (3 () ()) (4 (5 () ()) 6)) -> '(19 (3 () ()) (15 (5 () ()) 6))
+test' :: Tree Int
+test' = Tree 1 (Tree 2 Empty Empty) (Tree 3 (Tree 10 Empty Empty) Empty)
