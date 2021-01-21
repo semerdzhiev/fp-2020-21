@@ -76,3 +76,13 @@ bvushkov@gmail.com, като е хубаво да се представите.
 ## Седмица 12 - Типове в Haskell
 * [Запис](https://drive.google.com/file/d/1crLIdWe6BG4wA7Cxwt6TDENqMDOL2S2L/view?usp=sharing)
 * [Код от часа](./class/12.types.hs)
+
+## Седмица 13 - Разнообразни задачи
+* [Запис](https://drive.google.com/file/d/1o15nxtrtwMMRZty4L4WUmogf1z5KphEx/view?usp=sharing)
+
+## Седмица 13.5 - Подготовка за контролно
+* [Запис](https://drive.google.com/file/d/1XlDgRHdQqjSx-jDNHV8ju1IkxTiPl5uY/view?usp=sharing)
+* [Код](./haskell-midterm-prep.hs)
+
+## Седмица 15 - Функтори и монади
+* [Запис](https://drive.google.com/file/d/1WK-t2hEXAiPkdA5x79bJO_V6gCP5gomk/view?usp=sharing)
