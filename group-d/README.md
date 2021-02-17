@@ -16,5 +16,8 @@
 9. [Алгебрични типове и съпоставяне на образци](./09)([запис](https://drive.google.com/file/d/1HmOyvZS5e5kgYQ3z6d4SPiy0tJEUOqUt/view?usp=sharing))
 10. [Генератори на списъци и вложени дефиниции](./10)([запис](https://drive.google.com/file/d/1zuErZb8t053-4DJaxhMh6WqwjPuZj4Fm/view?usp=sharing))
 11. [Задачи върху BitVector и още списъци](./11)([запис](https://drive.google.com/file/d/1OzH1g4cKzeh0SCNdDH1Auyrq8V5w9ZEc/view?usp=sharing))
+12. [Типови класове](./12)
+13. [Записи с полета и дървета](./13)
+14. [Моноиди и функтори](./14)
 
 * [Допълнително упражнение преди К1](./pre-exam-1) ([запис](https://drive.google.com/file/d/1sTs9qjBXREwAGBfAmULi9EEDAo1K60J-/view?usp=sharing))
